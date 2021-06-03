@@ -38,6 +38,6 @@
 	}
 	
 	// 리다이렉트
-	response.sendRedirect("../5_1_Insert.jsp");
-	
+	response.sendRedirect("./5_1_Insert.jsp");
+
 %>
