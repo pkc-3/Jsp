@@ -31,7 +31,7 @@
 			</tr>
 			<tr>
 				<td>직급</td>
-				<td><select>
+				<td><select name="pos">
 					<option>사원</option>
 					<option>대리</option>
 					<option>과장</option>
