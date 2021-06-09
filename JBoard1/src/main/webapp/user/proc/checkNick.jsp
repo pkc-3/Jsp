@@ -1,3 +1,6 @@
+<%@page import="kr.co.jboard1.db.Sql"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="kr.co.jboard1.db.DBConfig"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.google.gson.JsonObject"%>
 <%@page import="java.sql.Connection"%>
@@ -8,23 +11,16 @@
 	//전송 데이터 수신
 	request.setCharacterEncoding("utf-8");
 	String nick = request.getParameter("nick");
+	int count = -1;
 	
-	//DB 정보
-		String host = "jdbc:mysql://54.180.123.231:3306/pkc716054";
-		String user = "pkc716054";
-		String pass = "1234";
-		int count = -1;
 	try{
-	//1단계
-	Class.forName("com.mysql.jdbc.Driver");
-	
-	//2단계
-	Connection conn = DriverManager.getConnection(host,user,pass);
+	//1,2단계
+	Connection conn = DBConfig.getInstance().getConnection();
 	//3단계
-	Statement stmt = conn.createStatement();
+	PreparedStatement psmt = conn.prepareStatement(Sql.SELECT_COUNT_NICK);
+	psmt.setString(1, nick);
 	//4단계
-	String sql ="SELECT COUNT(`nick`) FROM `JBOARD_MEMBER` WHERE `nick`='"+nick+"';";
-	ResultSet rs = stmt.executeQuery(sql);
+	ResultSet rs = psmt.executeQuery(Sql.SELECT_COUNT_NICK);
 	//5단계
 	if(rs.next()){
 		count = rs.getInt(1);

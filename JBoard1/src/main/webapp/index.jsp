@@ -1,6 +1,10 @@
+<%@page import="kr.co.jboard1.Bean.MemberBean"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	if(true){
+
+	MemberBean mb = (MemberBean) session.getAttribute("sessMember");
+
+	if(mb == null){
 		// 로그인을 안했으면
 		pageContext.forward("./user/login.jsp");
 	}else{

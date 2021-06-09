@@ -11,7 +11,7 @@
         <section id="board" class="write">
             <h3>글쓰기</h3>
             <article>
-                <form action="#">
+                <form action="/JBoard1/proc/write.jsp" method="post">
                     <table>
                         <tr>
                             <td>제목</td>
@@ -20,7 +20,7 @@
                         <tr>
                             <td>내용</td>
                             <td>
-                                <textarea name="content"></textarea>                                
+                                <textarea name="content"></textarea>
                             </td>
                         </tr>
                         <tr>

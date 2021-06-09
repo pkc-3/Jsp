@@ -1,15 +1,31 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+	String success = request.getParameter("success");
+
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>로그인</title>
     <link rel="stylesheet" href="/JBoard1/css/style.css"/>
+    <script>
+    	var success = "<%= success %>";
+    	if(success == 100){
+    		alert("해당하는 회원이 없습니다. \n 아이디와 비밀번호를 다시 확인해 주세요.");
+    	}else if(success == 101){
+    		alert("로그인을 하셔야 합니다.");
+    	}else if(success == 102){
+    		alert("로그아웃이 정상적으로 완료되었습니다.");
+    	}
+    </script>
 </head>
 <body>
     <div id="wrapper">
         <section id="user" class="login">
-            <form action="../list.html">
+            <form action="./JBoard1/user/proc/login.jsp" method="post">
                 <table border="0">
                     <tr>
                         <td><img src="/JBoard1/img/login_ico_id.png" alt="아이디"/></td>
