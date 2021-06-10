@@ -23,4 +23,6 @@ public class DBConfig {
 		Connection conn = DriverManager.getConnection(HOST, USER, PASS);
 		return conn;
 	}
+	
+	
 }
