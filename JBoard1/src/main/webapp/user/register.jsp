@@ -8,16 +8,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/JBoard1/js/checkUid.js"></script>
     <script src="/JBoard1/js/checkNick.js"></script>
+    <script src="/JBoard1/js/checkEmail.js"></script>
+    <script src="/JBoard1/js/checkHp.js"></script>
     <script src="/JBoard1/js/checkPass.js"></script>
     <script src="/JBoard1/js/checkName.js"></script>
-    <script src="/JBoard1/js/zipcode.js"></script>
-    <script src="/JBoard1/js/validation.js"></script>
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="/JBoard1/js/zipcode.js"></script>
+	<script src="/JBoard1/js/validation.js"></script>
 </head>
 <body>
     <div id="wrapper">
         <section id="user" class="register">
-            <form id="regForm" action="/JBoard1/proc/register.jsp" method="POST">
+            <form id="regForm" action="/JBoard1/user/proc/register.jsp" method="POST">
                 <table border="1">
                     <caption>사이트 이용정보 입력</caption>
                     <tr>
@@ -77,7 +79,7 @@
                         <td>
                             <div>
                                 <input type="text" id="zip" name="zip" placeholder="우편번호" readonly/>
-                                <button class="btnZip" onclick="zipcode()" type="button">주소검색</button>
+                                <button type="button" class="btnZip" onclick="zipcode()">주소검색</button>
                             </div>                            
                             <div>
                                 <input type="text" id="addr1" name="addr1" placeholder="주소를 검색하세요." readonly/>

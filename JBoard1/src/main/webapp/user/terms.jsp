@@ -1,32 +1,26 @@
-<%@page import="kr.co.jboard1.Bean.TermsBean"%>
+<%@page import="kr.co.jboard1.db.Sql"%>
+<%@page import="kr.co.jboard1.db.DBConfig"%>
+<%@page import="kr.co.jboard1.bean.TermsBean"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	//DB 정보
-	String host = "jdbc:mysql://54.180.123.231:3306/pkc716054";
-	String user = "pkc716054";
-	String pass = "1234";
-	
 	TermsBean tb = new TermsBean();
+
 	try{
-		// 1단계
-		Class.forName("com.mysql.jdbc.Driver");
-		// 2단계
-		Connection conn = DriverManager.getConnection(host, user, pass);
+		//1,2단계
+		Connection conn = DBConfig.getInstance().getConnection();
 		// 3단계
 		Statement stmt = conn.createStatement();
 		// 4단계
-		String sql = "SELECT * FROM `JBOARD_TERMS`;";
-		ResultSet rs = stmt.executeQuery(sql);
+		ResultSet rs = stmt.executeQuery(Sql.SELECT_TERMS);
 		// 5단계
 		if(rs.next()){
 			tb.setTerms(rs.getString(1));
 			tb.setPrivacy(rs.getString(2));
 		}
-		
 		// 6단계
 		conn.close();
 	}catch(Exception e){

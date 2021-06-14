@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 $(function(){
 			// 유효성 검증
 			$('#regForm').submit(function(){
@@ -22,6 +21,16 @@ $(function(){
 				
 				if(!isNickOk){
 					alert('별명이 유효하지 않습니다. 다시 확인하십시요.');
+					return false;
+				}
+				
+				if(!isEmailOk){
+					alert('이메일이 유효하지 않습니다. 다시 확인하십시요.');
+					return false;
+				}
+				
+				if(!isHpOk){
+					alert('휴대폰이 유효하지 않습니다. 다시 확인하십시요.');
 					return false;
 				}
 				return true;

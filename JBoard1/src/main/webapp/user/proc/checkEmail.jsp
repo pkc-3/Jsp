@@ -1,5 +1,5 @@
-<%@page import="kr.co.jboard1.db.Sql"%>
 <%@page import="java.sql.PreparedStatement"%>
+<%@page import="kr.co.jboard1.db.Sql"%>
 <%@page import="kr.co.jboard1.db.DBConfig"%>
 <%@page import="com.google.gson.JsonObject"%>
 <%@page import="java.sql.ResultSet"%>
@@ -10,16 +10,17 @@
 <%
 	// 전송 데이터 수신
 	request.setCharacterEncoding("utf-8");
-	String uid = request.getParameter("uid");
-	
+	String email = request.getParameter("email");
+
 	int count = -1;
 	
 	try{
 		//1,2단계
 		Connection conn = DBConfig.getInstance().getConnection();
+		
 		// 3단계
-		PreparedStatement psmt = conn.prepareStatement(Sql.SELECT_COUNT_UID);
-		psmt.setString(1, uid);
+		PreparedStatement psmt = conn.prepareStatement(Sql.SELECT_COUNT_EMAIL);
+		psmt.setString(1, email);
 		// 4단계
 		ResultSet rs = psmt.executeQuery();
 		// 5단계

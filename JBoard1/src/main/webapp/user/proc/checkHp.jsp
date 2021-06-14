@@ -10,18 +10,18 @@
 <%
 	// 전송 데이터 수신
 	request.setCharacterEncoding("utf-8");
-	String uid = request.getParameter("uid");
-	
+	String hp = request.getParameter("hp");
+
 	int count = -1;
 	
 	try{
 		//1,2단계
 		Connection conn = DBConfig.getInstance().getConnection();
 		// 3단계
-		PreparedStatement psmt = conn.prepareStatement(Sql.SELECT_COUNT_UID);
-		psmt.setString(1, uid);
+		PreparedStatement psmt = conn.prepareStatement(Sql.SELECT_COUNT_HP);
+		psmt.setString(1, hp);
 		// 4단계
-		ResultSet rs = psmt.executeQuery();
+		ResultSet rs = psmt.executeQuery();		
 		// 5단계
 		if(rs.next()){
 			count = rs.getInt(1);

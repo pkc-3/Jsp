@@ -11,18 +11,32 @@ public class DBConfig {
 	public static DBConfig getInstance() {
 		return instance;
 	}
-	//DB정보
+		
+	//DB 정보
 	private final String HOST = "jdbc:mysql://54.180.123.231:3306/pkc716054";
 	private final String USER = "pkc716054";
-	private final String PASS = "1234";
+	private final String PASS = "akdrh12!@";
 	
-	public Connection getConnection() throws Exception{
-		//1단계
+	public Connection getConnection() throws Exception {
+		// 1단계
 		Class.forName("com.mysql.jdbc.Driver");
-		//2단계
+		// 2단계
 		Connection conn = DriverManager.getConnection(HOST, USER, PASS);
+		
 		return conn;
 	}
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

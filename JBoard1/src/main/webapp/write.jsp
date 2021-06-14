@@ -20,7 +20,7 @@
                         <tr>
                             <td>내용</td>
                             <td>
-                                <textarea name="content"></textarea>
+                                <textarea name="content"></textarea>                                
                             </td>
                         </tr>
                         <tr>

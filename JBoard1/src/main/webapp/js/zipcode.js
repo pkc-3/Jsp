@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 function zipcode() {
 	        new daum.Postcode({
 	            oncomplete: function(data) {

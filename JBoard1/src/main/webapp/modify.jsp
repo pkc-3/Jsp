@@ -29,7 +29,7 @@
                         </tr>
                     </table>
                     <div>
-                        <a href="/JBoard1/list.jsp" class="btnCancel">취소</a>
+                        <a href="/JBoard1/view.jsp" class="btnCancel">취소</a>
                         <input type="submit"  class="btnWrite" value="수정완료">
                     </div>
                 </form>

@@ -1,5 +1,5 @@
-<%@page import="java.sql.PreparedStatement"%>
 <%@page import="kr.co.jboard1.db.Sql"%>
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="kr.co.jboard1.db.DBConfig"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -19,7 +19,6 @@
 	String addr2 = request.getParameter("addr2");
 	String regip = request.getRemoteAddr();
 	
-
 	try{
 		//1,2단계
 		Connection conn = DBConfig.getInstance().getConnection();
@@ -38,13 +37,17 @@
 		psmt.setString(10, regip);
 		// 4단계
         psmt.executeUpdate();
-        
 		// 5단계
 		// 6단계
 		conn.close();
 	}catch(Exception e){
 		e.printStackTrace();
 	}
+
 	// 로그인 페이지로 리다이렉트
 	response.sendRedirect("/JBoard1/user/login.jsp");
 %>
+
+
+
+
