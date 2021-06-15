@@ -22,7 +22,6 @@
 	// 전송 파라미터 수신
 	String pg = request.getParameter("pg");
 	
-	
 	// DAO 객체 가져오기
 	ArticleDao dao = ArticleDao.getInstance();
 	
@@ -65,7 +64,7 @@
                     <% for(ArticleBean article : articles){ %>
                     <tr>
                         <td><%= pageStartNum-- %></td>
-                        <td><a href="/JBoard1/view.jsp"><%= article.getTitle() %></a>&nbsp;[<%= article.getComment() %>]</td>
+                        <td><a href="/JBoard1/view.jsp?seq=<%= article.getSeq() %>"><%= article.getTitle() %></a>&nbsp;[<%= article.getComment() %>]</td>
                         <td><%= article.getNick() %></td>
                         <td><%= article.getRdate().substring(2, 10) %></td>
                         <td><%= article.getHit() %></td>
