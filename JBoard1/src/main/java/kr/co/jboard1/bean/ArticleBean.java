@@ -14,7 +14,7 @@ public class ArticleBean {
 	private String regip;
 	private String rdate;
 	
-	// Ãß°¡ÇÊµå
+	// ì¶”ê°€ í•„ë“œ
 	private String nick;
 	private FileBean fb;
 	
@@ -44,6 +44,10 @@ public class ArticleBean {
 	}
 	public void setParent(int parent) {
 		this.parent = parent;
+	}
+	
+	public void setParent(String parent) {
+		this.parent = Integer.parseInt(parent);
 	}
 	public int getComment() {
 		return comment;
