@@ -1,32 +1,32 @@
 /**
 	날짜 : 2021/06/08
-	이름 : 김철학
+	이름 : 고현석
 	내용 : 휴대폰 중복체크 스크립트
  */
 
 var isHpOk = false;
 
-$(function(){
-    		
-	$('input[name=hp]').focusout(function(){
-		
-		var hp = $(this).val(); 
-		var param = {'hp': hp};
-		    			
+$(function () {
+
+	$('input[name=hp]').focusout(function () {
+
+		var hp = $(this).val();
+		var param = { 'hp': hp };
+
 		$.ajax({
 			url: '/JBoard1/user/proc/checkHp.jsp',
 			type: 'get',
 			data: param,
 			dataType: 'json',
-			success: function(data){
-				if(data.result == 1){
+			success: function (data) {
+				if (data.result == 1) {
 					$('.resultHp').css('color', 'red').text('이미 사용중인 휴대폰번호 입니다.');
 					isHpOk = false;
-				}else{
+				} else {
 					$('.resultHp').css('color', 'green').text('사용 가능한 휴대폰번호 입니다.');
 					isHpOk = true;
 				}
-			}    				
+			}
 		});
 	});
 });

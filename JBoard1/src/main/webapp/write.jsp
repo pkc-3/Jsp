@@ -15,12 +15,12 @@
                     <table>
                         <tr>
                             <td>제목</td>
-                            <td><input type="text" name="title" placeholder="제목을 입력하세요."/></td>
+                            <td><input type="text" name="title" placeholder="제목을 입력하세요." style="background-color: #fbfef5;opacity: 0.5;"/></td>
                         </tr>
                         <tr>
                             <td>내용</td>
                             <td>
-                                <textarea name="content"></textarea>                                
+                                <textarea name="content" placeholder="내용을 입력하세요." style="background-color: #fbfef5;opacity: 0.5;"></textarea>                                
                             </td>
                         </tr>
                         <tr>
@@ -30,7 +30,7 @@
                     </table>
                     <div>
                         <a href="/JBoard1/list.jsp" class="btnCancel">취소</a>
-                        <input type="submit"  class="btnWrite" value="작성완료">
+                        <input type="submit"  class="btnWrite" value="작성완료" style="cursor:pointer;">
                     </div>
                 </form>
             </article>

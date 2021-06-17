@@ -41,10 +41,10 @@ public class Sql {
 												+ "ORDER BY `seq` DESC "
 												+ "LIMIT ?, 10";
 	
-	public static final String SELECT_COMMENTS = "SELECT a.* , b.`nick` FROM `JBOARD_ARTICLE` AS a "
+	public static final String SELECT_COMMENTS = "SELECT a.*, b.nick FROM `JBOARD_ARTICLE` AS a "
 												+ "JOIN `JBOARD_MEMBER` AS b "
 												+ "ON a.uid = b.uid "
-												+ "WHERE `parent`= `seq` "
+												+ "WHERE `parent`=? "
 												+ "ORDER BY `seq` ASC";
 	
 	public static final String SELECT_FILE = "SELECT * FROM `JBOARD_FILE` WHERE `seq`=?";
@@ -71,12 +71,25 @@ public class Sql {
 												+ "`newName`=?,"
 												+ "`rdate`=NOW()";
 	
+	public static final String UPDATE_ARTICLE = "UPDATE `JBOARD_ARTICLE` SET "
+												+ "`title`=?,"
+												+ "`content`=? "
+												+ "WHERE `seq`=?";
+	
+	public static final String UPDATE_COMMENT = "UPDATE `JBOARD_ARTICLE` SET "
+												+ "`content`=? "
+												+ "WHERE `seq`=?";
+	
 	public static final String UPDATE_ARTICLE_HIT   = "UPDATE `JBOARD_ARTICLE` SET `hit`=`hit`+1 WHERE `seq`=?";
 	public static final String UPDATE_COMMENT_PLUS  = "UPDATE `JBOARD_ARTICLE` SET `comment`=`comment`+1 WHERE `seq`=?";
 	public static final String UPDATE_COMMENT_MINUS = "UPDATE `JBOARD_ARTICLE` SET `comment`=`comment`-1 WHERE `seq`=?";
+	
 	public static final String UPDATE_FILE_DOWNLOAD = "UPDATE `JBOARD_FILE`    SET `download`=`download`+1 WHERE `seq`=?";
+	
+	public static final String DELETE_ARTICLE = "DELETE FROM `JBOARD_ARTICLE` WHERE `seq`=?";
 	public static final String DELETE_COMMENT = "DELETE FROM `JBOARD_ARTICLE` WHERE `seq`=?";
-
+	
+		
 }
 
 
