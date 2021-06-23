@@ -11,7 +11,7 @@
 	//DB 정보
 	String host = "jdbc:mysql://54.180.160.240:3306/pkc716054";
 	String user = "pkc716054";
-	String pass = "1234";
+	String pass = "akdrh12!@";
 	List<MemberBean> members = new ArrayList<>();
 	
 	try{
