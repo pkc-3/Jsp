@@ -1,22 +1,22 @@
 /**
 	날짜 : 2021/06/08
-	이름 : 고현석
+	이름 : 김철학
 	내용 : 이름 형식체크 스크립트
  */
 var regName = /^[가-힣]{2,10}$/;
-
+    	
 var isNameOk = false;
 
-$(function () {
-
-	$('input[name=name]').focusout(function () {
-
+$(function(){
+	
+	$('input[name=name]').focusout(function(){
+		
 		var name = $(this).val();
-
-		if (regName.test(name)) {
+		
+		if(regName.test(name)){
 			$('.resultName').text('');
 			isNameOk = true;
-		} else {
+		}else{
 			$('.resultName').css('color', 'red').text('이름은 한글 2 ~ 10자 까지 입력 가능합니다.');
 			isNameOk = false;
 		}

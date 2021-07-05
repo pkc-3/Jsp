@@ -27,20 +27,20 @@
                     <table>
                         <tr>
                             <td>제목</td>
-                            <td><input type="text" name="title" style="background-color: #fbfef5;opacity: 0.5;" value="<%= article.getTitle() %>" placeholder="제목을 입력하세요."/></td>
+                            <td><input type="text" name="title" value="<%= article.getTitle() %>" placeholder="제목을 입력하세요."/></td>
                         </tr>
                         <tr>
                             <td>내용</td>
                             <td>
-                                <textarea name="content" style="background-color: #fbfef5;opacity: 0.5;"><%= article.getContent() %></textarea>                                
+                                <textarea name="content"><%= article.getContent() %></textarea>                                
                             </td>
                         </tr>
-  
+                        <!-- 
                         <tr>
-                            <td>첨부(수정불가)</td>
-                            <td><input value="<%= article.getFb().getOriName() %>" readonly/></td>
+                            <td>첨부</td>
+                            <td><input type="file" name="file"/></td>
                         </tr>
-
+                        -->
                     </table>
                     <div>
                         <a href="/JBoard1/view.jsp?seq=<%= seq %>" class="btnCancel">취소</a>

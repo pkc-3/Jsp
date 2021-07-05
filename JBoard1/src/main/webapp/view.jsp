@@ -121,7 +121,7 @@
             <div>
                 <% if(mb.getUid().equals(article.getUid())){ %>
                 	<a href="/JBoard1/proc/delete.jsp?seq=<%= article.getSeq() %>" class="btnDelete">삭제</a>
-                	<a href="/JBoard1/modify.jsp?seq=<%= article.getSeq() %>&<%= article.getFb().getOriName() %>" class="btnModify">수정</a>
+                	<a href="/JBoard1/modify.jsp?seq=<%= article.getSeq() %>" class="btnModify">수정</a>
                 <% } %>
                 <a href="/JBoard1/list.jsp" class="btnList">목록</a>
             </div>  
@@ -163,7 +163,7 @@
                     <textarea name="comment" required></textarea>
                     <div>
                         <a href="#" class="btnCancel">취소</a>
-                        <input type="submit" class="btnWrite" value="작성완료" style="cursor:pointer;"/>
+                        <input type="submit" class="btnWrite" value="작성완료"/>
                     </div>
                 </form>
             </section>
