@@ -9,19 +9,19 @@
 	<a href="/Ch08/member/list.do">직원목록</a>
 	
 	<h4>직원수정</h4>
-	<form action="#" method="post">
+	<form action="/Ch08/member/modify.do" method="post">
 		<table border="1">
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="uid"/></td>
+				<td><input type="text" name="uid" readonly value="${requestScope.memberVo.uid}"/></td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="name"/></td>
+				<td><input type="text" name="name" value="${memberVo.name}"/></td>
 			</tr>
 			<tr>
 				<td>휴대폰</td>
-				<td><input type="tel" name="hp"/></td>
+				<td><input type="tel" name="hp" value="${memberVo.hp}"/></td>
 			</tr>
 			<tr>
 				<td>직급</td>

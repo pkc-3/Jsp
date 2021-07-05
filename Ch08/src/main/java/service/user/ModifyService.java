@@ -1,11 +1,11 @@
-package service.member;
+package service.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.MemberDao;
+import dao.UserDao;
 import service.CommonService;
-import vo.MemberVO;
+import vo.UserVO;
 
 public class ModifyService implements CommonService {
 
@@ -16,30 +16,28 @@ public class ModifyService implements CommonService {
 			// Get 요청
 			String uid = req.getParameter("uid");
 			
-			MemberVO vo = MemberDao.getInstance().selectMember(uid);
+			UserVO vo = UserDao.getInstance().selectUser(uid);
 			
 			req.setAttribute("memberVo", vo);
 			
-			return "/member/modify.jsp";
+			return "/user/modify.jsp";
 		}else {
 			// Post 요청
 			String uid  = req.getParameter("uid");
 			String name = req.getParameter("name");
 			String hp   = req.getParameter("hp");
-			String pos  = req.getParameter("pos");
-			String dep  = req.getParameter("dep");
+			String age  = req.getParameter("age");
 			
-			MemberVO vo = new MemberVO();
+			UserVO vo = new UserVO();
 			vo.setUid(uid);
 			vo.setName(name);
 			vo.setHp(hp);
-			vo.setPos(pos);
-			vo.setDep(dep);
+			vo.setAge(age);
 			
-			MemberDao.getInstance().updateMember(vo);
+			UserDao.getInstance().updateUser(vo);
 			
 			
-			return "redirect:/Ch08/member/list.do";
+			return "redirect:/Ch08/user/list.do";
 		}
 	}
 
